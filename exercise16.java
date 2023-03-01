@@ -23,7 +23,7 @@ public class exercise16 {
                     break;
                 }
             }
-            System.out.println("a:" + a);
+            System.out.println("*:" + a);
             a = 0;
             line = input.nextLine();
         }

@@ -15,6 +15,6 @@ public class exercise4 {
         int comma = name.indexOf(", ");
         String surname = name.substring(0, comma);
         String firstname = name.substring(comma + 2);
-        System.out.printf("%s %s", firstname, surname);
+        System.out.printf("%s %s", firstname, surname); 
     }
 }
