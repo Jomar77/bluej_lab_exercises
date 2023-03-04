@@ -23,8 +23,13 @@ public class exercise31 {
                     }
                 }
             }
-            for (String i : numbers) {
-                System.out.print(i + " ");
+            for (int i = 0; i < numbers.size(); i++) {
+                if(i != numbers.size() -1 ) {
+                    System.out.print(numbers.get(i) +",");
+                }
+                else {
+                    System.out.print(numbers.get(i));
+                }
             }
             
             numbers = new ArrayList<String>();
