@@ -17,51 +17,50 @@ Mary
 Mary
 Anne
 
-Sample input:
-Mary
-Joe
-Anne
-#
-
 Sample output:
-Mary:3
-Joe:0
-Anne:1
 
+Mary Mary: 3
+Joe Joe: 
+Anne 
 
  */
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Scanner;
+
 
 public class exercise32 {
-    public static void main(String[] args) throws IOException {
-        Scanner input = new Scanner(System.in);
-        ArrayList<String> names = new ArrayList<String>();
-        ArrayList<String> namesinput = new ArrayList<String>();
-        BufferedReader reader = new BufferedReader(new FileReader("names.txt"));
-        String line = reader.readLine();
-        while (line != null) {
-            names.add(line);
-            line = reader.readLine();
-        }
-        reader.close();
-        System.out.println("Enter your names:");
-        String name = input.nextLine();
-        while(!name.equals("#")){
-            namesinput.add(name);
-            name = input.nextLine();
-        }
-        for (int i = 0; i < namesinput.size(); i++) {
-            int count = 0;
-            for (int j = 0; j < names.size(); j++) {
-                if (namesinput.get(i).equals(names.get(j))) {
-                    count++;
+    public static void main(String[] args) {
+        try {
+            BufferedReader in = new BufferedReader(new FileReader("raw.txt"));
+            String line = in.readLine();
+            while (line != null) {
+                ArrayList<String> names = new ArrayList<String>();
+                String[] data = names.toArray(new String[0]);
+                String name = data[0];
+                int[] scores = new int[data.length - 1];
+                for (int i = 1; i < data.length; i++) {
+                    scores[i - 1] = Integer.parseInt(data[i]);
                 }
+                for (int i = 0; i < scores.length; i++) {
+                    for (int j = 0; j < scores.length - 1; j++) {
+                        if (scores[j] < scores[j + 1]) {
+                            int temp = scores[j];
+                            scores[j] = scores[j + 1];
+                            scores[j + 1] = temp;
+                        }
+                    }
+                }
+                System.out.print(name + " ");
+                for (int i = 0; i < 3; i++) {
+                    System.out.print(scores[i] + " ");
+                }
+                System.out.println();
+                line = in.readLine();
             }
-            System.out.println(namesinput.get(i) + ":" + count);
+        } catch (IOException e) {
+            System.out.println("Error processing file: " + e);
         }
     }
 }
