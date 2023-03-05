@@ -65,7 +65,7 @@ public class exercise34 {
                     double price = prices.get(name);
                     System.out.printf("%s %d @ $%.2f $%.2f %n", name, quantity, price, price * quantity);
                 } else {
-                    System.out.printf("%s Not available", name);
+                    System.out.printf("%s Not available%n", name);
                 }
                 System.out.println("Put Name and quantity:");
                 line = keyboard.nextLine();
