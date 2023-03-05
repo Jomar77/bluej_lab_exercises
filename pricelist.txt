@@ -1,0 +1,5 @@
+Bread 2.20
+Lemonade 1.95
+Butter 5.80
+Mince_Pie 0.95
+Chocolate 3.50
