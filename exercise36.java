@@ -2,7 +2,6 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -11,7 +10,6 @@ public class exercise36 {
         try {
             BufferedReader in = new BufferedReader(new FileReader("pricelist.txt"));
             String line = in.readLine();
-            ArrayList<Double> priceArr = new ArrayList<Double>();
             HashMap<String, Double> prices = new HashMap<String, Double>();
             while (line != null) {
                 String[] data = line.split(" ");
