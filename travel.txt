@@ -1,0 +1,6 @@
+Gore:Winton,65
+Invercargill:Gore,65
+Invercargill:Wanaka,246
+Winton:Invercargill,31
+Wanaka:Queenstown,70
+Queenstown:Invercargill,190
