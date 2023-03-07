@@ -1,0 +1,5 @@
+quartz:4
+pearl:6
+onyx:1
+ruby:40
+calcite:1
