@@ -1,0 +1,7 @@
+sword:12.0
+mace:6.0
+dagger:4.0
+claw:6.0
+bite:4.0
+club:8.0
+punch:2.0

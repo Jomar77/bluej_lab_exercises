@@ -45,7 +45,7 @@ public class exercise39 {
                 line = in.readLine();
             }
             Scanner keyboard = new Scanner(System.in);
-            System.out.println("Put Name and quantity:");
+            System.out.println("Put gems and quantity:");
             line = keyboard.nextLine();
             while (!line.equals("#")) {
                 String[] data = line.split(" ");
