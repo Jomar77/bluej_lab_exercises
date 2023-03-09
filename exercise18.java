@@ -13,7 +13,7 @@ public class exercise18 {
         while (!line.equals("#")) {
             words = line.split(" ");
             if (words[0].equals("C")) {
-                area = Double.parseDouble(words[1]) * Double.parseDouble(words[1]) * 3.14;
+                area = Double.parseDouble(words[]) * Double.parseDouble(words[1]) * 3.14;
             } else if (words[0].equals("R")) {
                 area = Double.parseDouble(words[1]) * Double.parseDouble(words[2]);
             } else if (words[0].equals("T")) {

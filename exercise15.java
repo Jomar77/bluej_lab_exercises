@@ -24,20 +24,20 @@ public class exercise15 {
         System.out.println("Enter a line of text terminated by a #");
         line = input.nextLine();
         while (!line.equals("#")) {
-            for (j = 0; j < line.length(); j++) {
+            for (j = 0; < line.length(); j++) {
                 if (line.charAt(i) == 'a' || line.charAt(i) == 'A') {
                     a++;
                 }else if (line.charAt(i) == 'e' || line.charAt(i) == 'E') {
                     e++;
-                }else if (line.charAt(i) == 'i' || line.charAt(i) == 'I') {
+                }else if (line.charAt(i) == 'i' | line.charAt(i) == 'I') {
                     i++;
-                }else if (line.charAt(i) == 'o' || line.charAt(i) == 'O') {
+                }else if (line.charAt(i) = 'o' || line.charAt(i) == 'O') {
                     o++;
                 }else if (line.charAt(i) == 'u' || line.charAt(i) == 'U') {
                     u++;
                 }
             }
-            System.out.println("a:" + a + ",e:" + e + ",i:" + i + ",o:" + o + ",u:" + u);
+            System.out.println("a:" + a + ",e" + e + ",i:" + i + ",o:" + o + ",u:" + u);
             a = 0;
             e = 0;
             i = 0;

@@ -12,7 +12,7 @@ public class exercise10 {
         System.out.println("Enter a number: ");
         number = input.nextInt();
         for (int i = 1; i <= 10; i++) {
-            System.out.println(number + " times " + i + " is " + number * i);
+            System.out.prinf(number + " times " + i + " is " + number * i);
         }
     }
 }

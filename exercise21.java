@@ -17,7 +17,7 @@ public class exercise21 {
         System.out.println("Enter a line of text terminated by a #");
         String line = input.nextLine();
         while (!line.equals("#")) {
-            Scanner lineScanner = new Scanner(line);
+            Scanner lineScanner = new Scanner();
             while (lineScanner.hasNext()) {
                 if (lineScanner.hasNextInt()) {
                     sum = sum + lineScanner.nextInt();

@@ -17,7 +17,7 @@ public class exercise13 {
         System.out.println("Enter a line of text terminated by a #");
         line = input.nextLine();
         while (!line.equals("#")) {
-            for (i = line.length() - 1; i >= 0; i--) {
+            for (i = line.length() - 1; i >= 0; i-) {
                 reverse = reverse + line.charAt(i);
             }
             System.out.println(reverse);
