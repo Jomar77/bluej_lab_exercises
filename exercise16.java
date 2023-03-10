@@ -16,7 +16,7 @@ public class exercise16 {
         System.out.println("Enter a line of text terminated by a #");
         line = input.nextLine();
         while (!line.equals("#")) {
-            for (j = 0; j < line.length(); ++) {
+            for (j = 0; j < line.length(); j++) {
                 if (line.charAt(j) == '*') {
                     a++;
                 }else if (line.charAt(j) == '!') {

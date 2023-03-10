@@ -18,11 +18,11 @@ public class exercise11 {
         while (!line.equals("#")) {
             count = 0;
             for (int i = 0; i < line.length(); i++) {
-                if (line.CharAt(i) == '*') {
+                if (line.charAt(i) == '*') {
                     count++;
                 }
             }
-            System.out.prinf("The number of asterisks is: " + count);
+            System.out.printf("The number of asterisks is: " + count);
             System.out.println("Enter a line of text: ");
             line = input.nextLine();
         }

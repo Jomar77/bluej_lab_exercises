@@ -20,7 +20,7 @@ public class exercise14 {
         while (!line.equals("#")) {
             for (i = 0; i < line.length(); i++) {
                 if (line.charAt(i) == 'a' || line.charAt(i) == 'e' || line.charAt(i) == 'i' || line.charAt(i) == 'o' || line.charAt(i) == 'u'|| 
-                line.charAt(i) == A' || line.charAt(i) == E' || line.charAt(i) == 'I' || line.charAt(i) == 'O' || line.charAt(i) == 'U') {
+                line.charAt(i) == 'A' || line.charAt(i) == 'E' || line.charAt(i) == 'I' || line.charAt(i) == 'O' || line.charAt(i) == 'U') {
                 vowels++;
                 }
             }

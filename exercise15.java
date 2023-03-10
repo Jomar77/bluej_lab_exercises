@@ -24,14 +24,14 @@ public class exercise15 {
         System.out.println("Enter a line of text terminated by a #");
         line = input.nextLine();
         while (!line.equals("#")) {
-            for (j = 0; < line.length(); j++) {
+            for (j = 0; j < line.length(); j++) {
                 if (line.charAt(i) == 'a' || line.charAt(i) == 'A') {
                     a++;
                 }else if (line.charAt(i) == 'e' || line.charAt(i) == 'E') {
                     e++;
                 }else if (line.charAt(i) == 'i' | line.charAt(i) == 'I') {
                     i++;
-                }else if (line.charAt(i) = 'o' || line.charAt(i) == 'O') {
+                }else if (line.charAt(i) =='o' || line.charAt(i) == 'O') {
                     o++;
                 }else if (line.charAt(i) == 'u' || line.charAt(i) == 'U') {
                     u++;

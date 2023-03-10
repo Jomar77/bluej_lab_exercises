@@ -17,7 +17,7 @@ public class exercise12 {
         line = input.nextLine();
         while (!line.equals("#")) {
             for (i = 0; i < line.length(); i++) {
-                if (line.charAt(i) ==  ') {
+                if (line.charAt(i) ==  ' ') {
                     count++;
                 }
             }
