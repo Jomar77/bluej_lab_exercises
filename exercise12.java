@@ -12,17 +12,20 @@ public class exercise12 {
         Scanner input = new Scanner(System.in);
         String line = "";
         int i = 0;
-        int count = 0;
+        int count = 1;
         System.out.println("Enter a line of text terminated by a #");
         line = input.nextLine();
         while (!line.equals("#")) {
+            if (line.isEmpty()) {
+                count = 0;
+            }else if(!line.isEmpty())
             for (i = 0; i < line.length(); i++) {
-                if (line.charAt(i) ==  ' ') {
+                if (line.charAt(i) ==  ' '){
                     count++;
                 }
             }
             System.out.println("There are " + count + " words on this line");
-            count = 0;
+            count = 1;
             line = input.nextLine();
         }
     }
