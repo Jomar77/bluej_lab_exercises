@@ -13,11 +13,10 @@ public class exercise13 {
         Scanner input = new Scanner(System.in);
         String line = "";
         String reverse = "";
-        int i = 0;
         System.out.println("Enter a line of text terminated by a #");
         line = input.nextLine();
         while (!line.equals("#")) {
-            for (i = line.length() - 1; i >= 0; i--) {
+            for (int i = line.length()-1; i >= 0; i--) {
                 reverse = reverse + line.charAt(i);
             }
             System.out.println(reverse);
