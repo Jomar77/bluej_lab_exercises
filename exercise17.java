@@ -16,7 +16,7 @@ public class exercise17 {
         int a = 0;
         System.out.println("Enter a line of text terminated by a #");
         line = input.nextLine();
-        while (!line.equals("#") {
+        while (!line.equals("#")) {
             words = line.split(",");
             for (j = 2; j < 6; j++) {
                 a = a + Integer.parseInt(words[j]);
