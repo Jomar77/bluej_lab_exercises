@@ -14,22 +14,19 @@ import java.util.Scanner;
 public class exercise5 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        System.out.println("Enter the name of the item");
         String name = input.nextLine();
-        System.out.println("Enter the price of the item");
         double price = input.nextDouble();
-        System.out.println("Enter the quantity of the item");
         int quantity = input.nextInt();
         double total = price * quantity;
         if (quantity >= 10) {
             double discount = total *0.1; 
             total = total * 0.9;
-            System.out.printf("%d X %s @ $%.2f %n", quantity, name, price);
-            System.out.printf("Subtotal: $%.2f %n", total);
+            System.out.printf("%d x %s @ $%.2f%n", quantity, name, price);
+            System.out.printf("Subtotal: $%.2f%n", price * quantity);
             System.out.println("-10% Discount: $" + discount);
-            System.out.printf("Total : $ %.2f",  total);
+            System.out.printf("Total: $%.2f",  total);
         }else{
-            System.out.printf("%d X %s @ $%.2f %n", quantity, name, price);
+            System.out.printf("%d x %s @ $%.2f%n", quantity, name, price);
             System.out.printf("Subtotal: $%.2f", total);
         }
     }

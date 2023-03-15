@@ -10,7 +10,6 @@ import java.util.Scanner;
 public class exercise4 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        System.out.println("Enter your Name:");
         String name = input.nextLine();
         int comma = name.indexOf(", ");
         String surname = name.substring(0, comma);
