@@ -13,7 +13,6 @@ public class exercise11 {
         Scanner input = new Scanner(System.in);
         String line;
         int count;
-        System.out.println("Enter a line of text: ");
         line = input.nextLine();
         while (!line.equals("#")) {
             count = 0;
@@ -22,8 +21,7 @@ public class exercise11 {
                     count++;
                 }
             }
-            System.out.printf("The number of asterisks is: " + count);
-            System.out.println("Enter a line of text: ");
+            System.out.println(count);
             line = input.nextLine();
         }
     }
