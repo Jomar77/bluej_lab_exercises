@@ -13,7 +13,6 @@ public class exercise12 {
         String line = "";
         int i = 0;
         int count = 1;
-        System.out.println("Enter a line of text terminated by a #");
         line = input.nextLine();
         while (!line.equals("#")) {
             if (line.isEmpty()) {
@@ -24,7 +23,7 @@ public class exercise12 {
                     count++;
                 }
             }
-            System.out.println("There are " + count + " words on this line");
+            System.out.println(count);
             count = 1;
             line = input.nextLine();
         }
