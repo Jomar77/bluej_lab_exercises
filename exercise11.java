@@ -1,11 +1,3 @@
-/*
-Write a program that reads in a series of lines terminated by a line
-containing only a single '#'
-Output the number of times an asterix occurs on each line of input
-Do not output a result for the line containing the #
-(Hint Use for – counter controlled loop)
-*/
-
 import java.util.Scanner;
 
 public class exercise11 {
