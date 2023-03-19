@@ -5,7 +5,6 @@ public class exercise13 {
         Scanner input = new Scanner(System.in);
         String line = "";
         String reverse = "";
-        System.out.println("Enter a line of text terminated by a #");
         line = input.nextLine();
         while (!line.equals("#")) {
             for (int i = line.length()-1; i >= 0; i--) {
