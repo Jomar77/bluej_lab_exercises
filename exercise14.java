@@ -15,7 +15,6 @@ public class exercise14 {
         String line = "";
         int i = 0;
         int vowels = 0;
-        System.out.println("Enter a line of text terminated by a #");
         line = input.nextLine();
         while (!line.equals("#")) {
             for (i = 0; i < line.length(); i++) {
@@ -24,7 +23,6 @@ public class exercise14 {
                 vowels++;
                 }
             }
-            System.out.println("There are " + vowels + " vowels in the line");
             vowels = 0;
             line = input.nextLine();
         }
