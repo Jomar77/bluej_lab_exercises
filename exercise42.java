@@ -26,36 +26,29 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class exercise42 {
-    public static void main(String[] args) {
-        try {
-            BufferedReader in = new BufferedReader(new FileReader("morse.txt"));
-            String line = in.readLine();
-            HashMap<String, String> morse = new HashMap<String, String>();
-            while (line != null) {
-                String[] data = line.split(":");
-                String letter = data[0];
-                String code = data[1];
-                morse.put(letter, code);
-                line = in.readLine();
-            }
-            Scanner keyboard = new Scanner(System.in);
-            System.out.println("Put ");
-            line = keyboard.nextLine();
-            while (!line.equals("#")) {
-                String[] data = line.toUpperCase().split(" ");
-                for (int i = 0; i < data.length; i++) {
-                    String word = data[i];
-                    for (int j = 0; j < word.length(); j++) {
-                        String letter = word.substring(j, j + 1);
-                        System.out.print(morse.get(letter));
-                    }
-                    System.out.print(" ");
-                }
-                System.out.println();
-                line = keyboard.nextLine();
-            }
-        } catch (IOException e) {
-            System.out.println("Error processing file: " + e);
+
+    public static void main(String[] args) throws IOException {
+        HashMap<String, String> morseCode = new HashMap<String, String>();
+        BufferedReader br = new BufferedReader(new FileReader("morse.txt"));
+        String line;
+        while ((line = br.readLine()) != null) {
+            String[] parts = line.split(" ");
+            morseCode.put(parts[0], parts[1]);
         }
+        br.close();
+        Scanner sc = new Scanner(System.in);
+        String input = sc.nextLine();
+        while (!input.equals("#")) {
+            String[] words = input.split(" ");
+            for (String word : words) {
+                for (int i = 0; i < word.length(); i++) {
+                    System.out.print(morseCode.get(word.substring(i, i + 1).toUpperCase()) + " ");
+                }
+                System.out.print("   ");
+            }
+            System.out.println();
+            input = sc.nextLine();
+        }
+        sc.close();
     }
 }
