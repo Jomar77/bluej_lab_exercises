@@ -20,7 +20,6 @@ public class exercise22 {
         int total = 0;
         int score = 0;
 
-        System.out.print("Enter a line of text terminated by a # : ");
         line = scan.nextLine();
         while(!line.equals("#"))
         {
@@ -35,7 +34,6 @@ public class exercise22 {
             }
             System.out.println(firstname + " " + surname + " " + total);
             total = 0;
-            System.out.print("Enter a line of text terminated by a # : ");
             line = scan.nextLine();
         }
     }

@@ -13,16 +13,14 @@ public class exercise20 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int sum = 0;
-        System.out.println("Enter a line of text terminated by a #");
         String line = input.nextLine();
         while (!line.equals("#")) {
             Scanner lineScanner = new Scanner(line);
             while (lineScanner.hasNextInt()) {
                 sum = sum + lineScanner.nextInt();
             }
-            System.out.println("Sum: " + sum);
+            System.out.println(sum);
             sum = 0;
-            System.out.println("Enter a line of text terminated by a #");
             line = input.nextLine();
         }
     }

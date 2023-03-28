@@ -1,25 +1,3 @@
-/* 
-Write a program that reads in a series of lines terminated by a line
-containing only a single '#'
-Each line contains 2 single word names and the game score for each
-name
-Write out the names and scores in descending (high to low) order of score
-Do not output a result for the line containing the #
-
-sample input 1
-Sam 10 Tom 90
-
-Sample output 1
-Tom 90 Sam 10
-
-Sample input 2
-Sue 70 Harry 10
-
-Sample output 2
-Sue 70 Harry 10
-
-*/
-
 import java.util.Scanner;
 
 public class exercise19 {
@@ -35,8 +13,6 @@ public class exercise19 {
         String name = "";
         int temp = 0;
         String tempName = "";
-
-        System.out.println("Enter a line of text terminated by a #");
         line = input.nextLine();
 
         while (!line.equals("#")) {
@@ -69,10 +45,12 @@ public class exercise19 {
             }
 
             for (int i = 0; i < sortedScores.length; i++) {
-                System.out.print(sortedNames[i] + " " + sortedScores[i] + " ");
+                System.out.print(sortedNames[i] + " " + sortedScores[i]);
+                if (i != sortedScores.length - 1) {
+                    System.out.print(" ");
+                }
             }
-
-            System.out.println("\nEnter a line of text terminated by a #");
+            System.out.println();
             line = input.nextLine();
         }
 
