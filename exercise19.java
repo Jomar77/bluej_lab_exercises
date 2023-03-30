@@ -25,7 +25,7 @@ public class exercise19 {
                     names[i / 2] = name;
                 } else {
                     score = Integer.parseInt(words[i]);
-                    scores[i / 2] = score;
+                    scores[i /2] = score;
                 }
             }
 
