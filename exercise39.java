@@ -64,8 +64,6 @@ public class exercise39 {
     String name = "John";
     String surname = "Doe";
 
-    public String mergename()
-
     public int add(int a, int b) {
         return a + b;
     }
