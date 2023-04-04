@@ -16,14 +16,20 @@ public class exercise22 {
             scanLine.useDelimiter(",");
             surname = scanLine.next();
             firstname = scanLine.next();
-            while(scanLine.hasNextInt())
+            System.out.println(firstname + " " + surname + " " + total(line, scanLine));
+            total = 0;
+            line = scan.nextLine();
+        }
+    }
+
+    public static int total(String line, Scanner scanLine) {
+        int total = 0;
+        int score = 0;
+        while(scanLine.hasNextInt())
             {
                 score = scanLine.nextInt();
                 total = total + score;
             }
-            System.out.println(firstname + " " + surname + " " + total);
-            total = 0;
-            line = scan.nextLine();
-        }
+        return total;
     }
 }
