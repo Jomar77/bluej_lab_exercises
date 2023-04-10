@@ -1,19 +1,26 @@
 import java.util.Scanner;
+import java.util.Arrays;
+
 public class exercise25 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int len = 0;
         String [] words = new String[0];
-
-        System.out.println("Enter the length of your array");
         len = input.nextInt();
         words = new String[len];
-        for (int i = 0; i < len; i++) {
-            System.out.println("Enter a word");
-            words[i] = input.next();
-        }
+        
+        input(words, len);
+        Arrays.sort(words);
+
         for (int i = 0; i < len; i++) {
             System.out.println(words[i]);
+        }
+    }
+
+    public static void input(String[] words, int len) {
+        Scanner input = new Scanner(System.in);
+        for (int i = 0; i < len; i++) {
+            words[i] = input.next();
         }
     }
 }
