@@ -9,13 +9,16 @@ public class exercise26 {
         
         String text = input.nextLine();
         while (!text.equals("#")) {
-            for (int i = 0; i < array.length; i++) {
-                if (text.contains(array[i])) {
-                    text = text.replace(array[i], array[i + 1]);
-                }
-            }
-            System.out.println(text);
+            System.out.println(input(array, text));
             text = input.nextLine();
+        }
+    }
+
+    public static void input(String[] array, String text) {
+        for (int i = 0; i < array.length; i++) {
+            if (text.contains(array[i])) {
+                text = text.replace(array[i], array[i + 1]);
+            }
         }
     }
 }
