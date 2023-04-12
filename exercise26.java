@@ -9,7 +9,7 @@ public class exercise26 {
         
         String text = input.nextLine();
         while (!text.equals("#")) {
-            System.out.println(input(array, text));
+            input(array,text);
             text = input.nextLine();
         }
     }
@@ -20,5 +20,6 @@ public class exercise26 {
                 text = text.replace(array[i], array[i + 1]);
             }
         }
+        System.out.println(text);
     }
 }
