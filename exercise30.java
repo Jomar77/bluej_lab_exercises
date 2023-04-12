@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class exercise30 {
     public static void main(String[] args) {
@@ -7,26 +8,19 @@ public class exercise30 {
         ArrayList<Integer> numbers = new ArrayList<Integer>();
         
         String number = input.nextLine();
-        while (!number.equals("#")) {
+        while (!number.equals("#") && number.length() < 20  && number.length() > 0) {
             Scanner lineScanner = new Scanner(number);
             while (lineScanner.hasNext()) {
                     numbers.add(lineScanner.nextInt());
             }
-            for (int i = 0; i < numbers.size(); i++) {
-                for (int j = 0; j < numbers.size() - 1; j++) {
-                    if (numbers.get(j) > numbers.get(j + 1)) {
-                        int temp = numbers.get(j);
-                        numbers.set(j, numbers.get(j + 1));
-                        numbers.set(j + 1, temp);
-                    }
-                }
-            }
+
+            Collections.sort(numbers);
+
             for (int i : numbers) {
                 System.out.print(i + " ");
             }
-            
+            System.out.println();
             numbers = new ArrayList<Integer>();
-            System.out.println("\nEnter your numbers:");
             number = input.nextLine();
         }
     }
