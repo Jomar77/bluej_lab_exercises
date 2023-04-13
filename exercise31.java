@@ -6,7 +6,6 @@ public class exercise31 {
         Scanner input = new Scanner(System.in);
         ArrayList<String> numbers = new ArrayList<String>();
         
-        System.out.println("Enter your numbers:");
         String number = input.nextLine();
         while (!number.equals("#")) {
             Scanner lineScanner = new Scanner(number);
@@ -14,15 +13,8 @@ public class exercise31 {
             while (lineScanner.hasNext()) {
                     numbers.add(lineScanner.next());
             }
-            for (int i = 0; i < numbers.size(); i++) {
-                for (int j = 0; j < numbers.size() - 1; j++) {
-                    if (numbers.get(j).compareTo(numbers.get(j + 1)) > 0) {
-                        String temp = numbers.get(j);
-                        numbers.set(j, numbers.get(j + 1));
-                        numbers.set(j + 1, temp);
-                    }
-                }
-            }
+            sort(numbers, numbers.size());
+            
             for (int i = 0; i < numbers.size(); i++) {
                 if(i != numbers.size() -1 ) {
                     System.out.print(numbers.get(i) +",");
@@ -33,8 +25,19 @@ public class exercise31 {
             }
             
             numbers = new ArrayList<String>();
-            System.out.println("\nEnter your numbers:");
             number = input.nextLine();
+        }
+    }
+
+    public static void sort(ArrayList<String> numbers, int size){
+        for (int i = 0; i < numbers.size(); i++) {
+            for (int j = 0; j < numbers.size() - 1; j++) {
+                if (numbers.get(j).compareTo(numbers.get(j + 1)) > 0) {
+                    String temp = numbers.get(j);
+                    numbers.set(j, numbers.get(j + 1));
+                    numbers.set(j + 1, temp);
+                }
+            }
         }
     }
 }
