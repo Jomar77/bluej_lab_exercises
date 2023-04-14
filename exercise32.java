@@ -1,29 +1,3 @@
-/*  
- Write a program that reads in a series of lines from file names.txt and
-stores them in an ArrayList of Strings.
-The program should then continue to read a series of names from
-standard input until a line with only a # is reached
-For each name it should output the name, a colon then the number of
-times that name is located within the ArrayList (as shown below).
-Do not process the line with the #
-
-Sample names in file names.txt:
-Harry
-Sue
-John
-Mary
-James
-Mary
-Mary
-Anne
-
-Sample output:
-
-Mary Mary: 3
-Joe Joe: 
-Anne 
-
- */
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -43,15 +17,7 @@ public class exercise32 {
                 for (int i = 1; i < data.length; i++) {
                     scores[i - 1] = Integer.parseInt(data[i]);
                 }
-                for (int i = 0; i < scores.length; i++) {
-                    for (int j = 0; j < scores.length - 1; j++) {
-                        if (scores[j] < scores[j + 1]) {
-                            int temp = scores[j];
-                            scores[j] = scores[j + 1];
-                            scores[j + 1] = temp;
-                        }
-                    }
-                }
+               
                 System.out.print(name + " ");
                 for (int i = 0; i < 3; i++) {
                     System.out.print(scores[i] + " ");
@@ -61,6 +27,18 @@ public class exercise32 {
             }
         } catch (IOException e) {
             System.out.println("Error processing file: " + e);
+        }
+    }
+
+    public  static void sort (int[] scores){
+        for (int i = 0; i < scores.length; i++) {
+            for (int j = 0; j < scores.length - 1; j++) {
+                if (scores[j] < scores[j + 1]) {
+                    int temp = scores[j];
+                    scores[j] = scores[j + 1];
+                    scores[j + 1] = temp;
+                }
+            }
         }
     }
 }
