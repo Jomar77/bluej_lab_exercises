@@ -17,12 +17,16 @@ public class exercise33 {
             line = reader.readLine();
         }
         reader.close();
-        System.out.println("Enter your names:");
         String name = input.nextLine();
         while(!name.equals("#")){
             namesinput.add(name);
             name = input.nextLine();
         }
+        counter(names, namesinput);
+        
+    }
+
+    public static void counter(ArrayList<String> names, ArrayList<String> namesinput){
         for (int i = 0; i < namesinput.size(); i++) {
             int count = 0;
             for (int j = 0; j < names.size(); j++) {
