@@ -54,7 +54,6 @@ public class exercise35 {
                 line = in.readLine();
             }
             Scanner keyboard = new Scanner(System.in);
-            System.out.println("Put phone number:");
             line = keyboard.nextLine();
             while (!line.equals("#")) {
                 String name = phone.get(line);
@@ -66,7 +65,7 @@ public class exercise35 {
                 line = keyboard.nextLine();
             }
         } catch (IOException e) {
-            System.out.println("Error processing file: " + e);
+            System.out.println(e);
         }
     }
 }
