@@ -13,7 +13,7 @@ public class exercise11 {
     public static int count(String line) {
         int count = 0;
         for (int i = 0; i < line.length(); i++) {
-            if (line.charAt(i) == '*') {
+            if (line.charAt(i) == '*') {    
                 count++;
             }
         }
