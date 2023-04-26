@@ -6,20 +6,19 @@ public class exercise12 {
             int count = 1;
             String line = input.nextLine();
             while (!line.equals("#")) {
-                System.out.println(count(line));
+                System.out.println(count(line,count));
                 count = 1;
                 line = input.nextLine();
             }
         }
     }
 
-    public static int count(String line) {
-        int count = 0;
+    public static int count(String line, int counter) {
         for (char c : line.toCharArray()) {
             if (c == ' ') {
-                count++;
+                counter++;
             }
         }
-        return count;
+        return counter;
     }
 }
