@@ -25,9 +25,10 @@
      {
          Scanner scn = new Scanner(in);
          double area = 0;
-         scn.useDelimiter(" ");
+         scn.useDelimiter("\s");
          String letter = scn.nextLine();
          
+
          if(letter.equals("C")){
              area = 3.14 * scn.nextDouble();
          }
