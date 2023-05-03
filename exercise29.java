@@ -11,6 +11,10 @@ public class exercise29 {
             name = input.nextLine();
         }
         Collections.sort(names);
+        
+    }
+
+    public static void output(ArrayList <String> names){
         for (String s : names) {
             System.out.println(s);
         }
