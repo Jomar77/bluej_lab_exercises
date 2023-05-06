@@ -35,7 +35,6 @@ public class exercise36 {
                     }
                 }
                 System.out.printf("%s", total);
-                System.out.printf("%nPut Name and quantity:");
                 line = keyboard.nextLine();
             }
         } catch (IOException e) {
