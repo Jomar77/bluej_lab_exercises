@@ -19,7 +19,6 @@ public class exercise36 {
                 line = in.readLine();
             }
             Scanner keyboard = new Scanner(System.in);
-            System.out.println("Put Name and quantity:");
             line = keyboard.nextLine();
             while (!line.equals("#")) {
                 String[] data = line.split(" ");
