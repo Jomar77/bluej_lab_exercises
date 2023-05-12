@@ -1,19 +1,3 @@
-/*
- * Write a program that reads in a series of lines from standard input
-terminated by a line containing only a single '#'
-Each line contains fields separated by commas and string fields
-surrounded by double quotes.
-You output a line to standard output where all commas in each line are
-replaced with a semicolon ';' character except those commas which are
-inside a quoted string
-Do not output a result for the line containing the #
-Sample Input 
-"Sam",10,20,","
-"Smith, Anne",20,"Gore"
-Sample Output
- "Sam";10;20;","
- "Smith, Anne";20;"Gore"
- */
 
 import java.util.Scanner;
 

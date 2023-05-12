@@ -1,7 +1,7 @@
 public class intof {
     public static void main(String[] args) {
-        short i = 0;
-        while(true){
+        byte i = 0;
+        while(){
             i++;
             System.out.println(i);
         }
