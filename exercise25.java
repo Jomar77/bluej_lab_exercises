@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Arrays;
 
 public class exercise25 {
     public static void main(String[] args) {
@@ -10,7 +11,7 @@ public class exercise25 {
         for (int i = 0; i < len; i++) {
             words[i] = input.next();
         }
-        sorting(words, len);
+        Arrays.sort(words);
 
         for (int i = 0; i < len; i++) {
             System.out.println(words[i]);
@@ -18,17 +19,4 @@ public class exercise25 {
 
 }
 
-   
-    public static void sorting(String[] words, int length) {
-        for (int i = 0; i < length; i++) {
-            for (int j = 0; j < length - 1; j++) {
-                if (words[j].compareTo(words[j + 1]) > 0) {
-                    String temp = words[j];
-                    words[j] = words[j + 1];
-                    words[j + 1] = temp;
-                }
-            }
-        }
-        
-    }
 }
