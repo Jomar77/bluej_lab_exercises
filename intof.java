@@ -1,9 +1,5 @@
 public class intof {
     public static void main(String[] args) {
-        byte i = 0;
-        while(){
-            i++;
-            System.out.println(i);
-        }
+        System.out.println(2.0*(4+2/5));
     }
 }

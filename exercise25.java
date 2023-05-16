@@ -17,9 +17,9 @@ public class exercise25 {
         }
     }
 
-    public static void input(String[] words, int len) {
+    public static void input(String[] words, int length) {
         Scanner input = new Scanner(System.in);
-        for (int i = 0; i < len; i++) {
+        for (int i = 0; i < length; i++) {
             words[i] = input.next();
         }
     }
