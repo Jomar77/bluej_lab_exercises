@@ -1,11 +1,3 @@
-/*
- * Write a program that reads in a series of positive integers terminated by a
--1
-Output the numbers in ascending numerical order – one number per line
-Do not include the line w
- */
-
-
 import java.util.Scanner;
 
 public class exercise28{
