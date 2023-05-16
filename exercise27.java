@@ -22,11 +22,11 @@ public class exercise27 {
 
     public static void grader(double average, double i){
         if (i < average) {
-            System.out.println(i + " BELOW AVERAGE");
+            System.out.printf("%.2f BELOW AVERAGE\n", i);
         } else if (i > average) {
-            System.out.println(i + " ABOVE AVERAGE");
+            System.out.printf("%.2f ABOVE AVERAGE\n", i);
         } else {
-            System.out.println(i + " AVERAGE");
+            System.out.printf("%.2f AVERAGE\n",i);
         }
     }
 }
