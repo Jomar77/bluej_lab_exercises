@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class exercise31 {
     public static void main(String[] args) {
@@ -13,30 +14,25 @@ public class exercise31 {
             while (lineScanner.hasNext()) {
                     numbers.add(lineScanner.next());
             }
-            sort(numbers, numbers.size());
+
+            Collections.sort(numbers);
+
+            process(numbers);
             
-            for (int i = 0; i < numbers.size(); i++) {
-                if(i != numbers.size() -1 ) {
-                    System.out.print(numbers.get(i) +",");
-                }
-                else {
-                    System.out.print(numbers.get(i));
-                }
-            }
             
             numbers = new ArrayList<String>();
+            System.out.println();
             number = input.nextLine();
         }
     }
 
-    public static void sort(ArrayList<String> numbers, int size){
+    public static void process(ArrayList<String> numbers){
         for (int i = 0; i < numbers.size(); i++) {
-            for (int j = 0; j < numbers.size() - 1; j++) {
-                if (numbers.get(j).compareTo(numbers.get(j + 1)) > 0) {
-                    String temp = numbers.get(j);
-                    numbers.set(j, numbers.get(j + 1));
-                    numbers.set(j + 1, temp);
-                }
+            if(i != numbers.size() -1 ) {
+                System.out.print(numbers.get(i) +",");
+            }
+            else {
+                System.out.print(numbers.get(i));
             }
         }
     }
