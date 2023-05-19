@@ -11,6 +11,7 @@ public class exercise29 {
             name = input.nextLine();
         }
         Collections.sort(names);
+        output(names);
         
     }
 
