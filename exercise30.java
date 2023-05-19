@@ -6,7 +6,6 @@ public class exercise30 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         ArrayList<Integer> numbers = new ArrayList<Integer>();
-        
         String number = input.nextLine();
         while (!number.equals("#") && number.length() < 20  && number.length() > 0) {
             Scanner lineScanner = new Scanner(number);
