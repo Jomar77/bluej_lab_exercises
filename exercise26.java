@@ -1,25 +1,17 @@
 import java.util.Scanner;
+
 public class exercise26 {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        String[] array = new String[args.length];
-        for (int i = 0; i < args.length; i++) {
-            array[i] = args[i];
-        }
-        
-        String text = input.nextLine();
-        while (!text.equals("#")) {
-            input(array,text);
-            text = input.nextLine();
-        }
-    }
+        String[] replaceWords = args;
 
-    public static void input(String[] array, String text) {
-        for (int i = 0; i < array.length; i++) {
-            if (text.contains(array[i])) {
-                text = text.replace(array[i], array[i + 1]);
+        Scanner input = new Scanner(System.in);
+        String line =    input.nextLine();
+        while (!line.equals("#")) {
+            for (int i = 0; i < replaceWords.length; i += 2) {
+                line = line.replace(replaceWords[i], replaceWords[i + 1]);
             }
+            System.out.println(line);
+            line = input.nextLine();
         }
-        System.out.println(text);
     }
 }
