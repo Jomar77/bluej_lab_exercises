@@ -16,7 +16,8 @@ Mary 87 76 45
 Joe 87 78 76
 Anne 99 90 5
  */
-import java.util.*;
+import java.util.Scanner;
+import java.util.Arrays;
 import java.io.File;
 
 public class exercise32{
