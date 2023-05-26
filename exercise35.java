@@ -1,35 +1,3 @@
-/*
- * The file phonelist.txt contains a list of phone numbers and the person or
-company associated with them..
-Each line in the file contains a phone number (a string without spaces)
-and a description of the person or company(which can have spaces)
-Read the list and create a HashMap using the phone number as the key
-and the description as the data
-
-
-Sample file phonelist.txt
-032149970 The Warehouse
-021211234567 Anna Jones
-0508446987 Hoyts
-+6339876543 Australian Immigration
-
-From standard input read a list of phone numbers
-Each line contains a phone number from a telephone account
-For each line output the phone number followed by its description.
-The input data will end in a single line containing a #
-Do not process the line with the # in it
-If the phone number does not exist in the inventory then output
-the phone number with the text “unknown” beside it
-
-Sample Input Sample Output
-021211234567 021211234567 Anna Jones
-032149970 032149970 The Warehouse
-+6339876543 +6339876543 Australian Immigration
-021211234567 021211234567 Anna Jones
-
- */
-
-
 import java.util.Scanner;
 import java.util.HashMap;
 import java.io.BufferedReader;
