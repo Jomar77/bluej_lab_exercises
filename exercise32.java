@@ -8,7 +8,7 @@ public class exercise32{
     while(scan.hasNextLine()){
       String[] line = scan.nextLine().split(" ");
       String name = line[0];
-      int[] scores = new int[line.length-1];
+      int[] scores = new int[line.length-1];  
       for(int i = 1; i < line.length; i++){
         scores[i-1] = Integer.parseInt(line[i]);
       }
