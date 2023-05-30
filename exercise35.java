@@ -1,24 +1,14 @@
-import java.util.Scanner;
-import java.util.HashMap;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-
+import java.util.*;
+import java.io.*;
 
 public class exercise35 {
-    public static void main(String[] args) {
-        try {
+    public static void main(String[] args) throws IOException {
             BufferedReader in = new BufferedReader(new FileReader("phonelist.txt"));
-            String line = in.readLine();
             HashMap<String, String> phone = new HashMap<String, String>();
+            String line = in.readLine();
             while (line != null) {
                 String[] data = line.split(" ");
-                String number = data[0];
-                String name = data[1];
-                for (int i = 2; i < data.length; i++) {
-                    name = name + " " + data[i];
-                }
-                phone.put(number, name);
+                phone.put(data[0], data[1] + " " + data[2]);
                 line = in.readLine();
             }
             Scanner keyboard = new Scanner(System.in);
@@ -32,8 +22,5 @@ public class exercise35 {
                 }
                 line = keyboard.nextLine();
             }
-        } catch (IOException e) {
-            System.out.println(e);
-        }
     }
 }
