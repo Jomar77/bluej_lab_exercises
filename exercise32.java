@@ -1,9 +1,10 @@
 import java.util.Scanner;
 import java.util.Arrays;
 import java.io.File;
+import java.io.IOException;
 
 public class exercise32 {
-  public static void main(String[] args) throws Exception {
+  public static void main(String[] args) throws IOException {
     Scanner scan = new Scanner(new File("raw.txt"));
     while (scan.hasNextLine()) {
       String[] line = scan.nextLine().split(" ");
