@@ -5,8 +5,7 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class exercise37 {
-    public static void main(String[] args) {
-        try {
+    public static void main(String[] args)  throws IOException{
             BufferedReader in = new BufferedReader(new FileReader("numberplates.txt"));
             String line = in.readLine();
             HashMap<String, String> numberplates = new HashMap<String, String>();
@@ -25,11 +24,7 @@ public class exercise37 {
                 } else {
                     System.out.println("Unregistered Car");
                 }
-                System.out.println("Put numberplate:");
                 line = keyboard.nextLine();
             }
-        } catch (IOException e) {
-            System.out.println("Error processing file: " + e);
-        }
     }
 }
