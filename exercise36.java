@@ -6,39 +6,36 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class exercise36 {
-    public static void main(String[] args) {
-        try {
+    public static void main(String[] args) throws IOException{
             BufferedReader in = new BufferedReader(new FileReader("pricelist.txt"));
             String line = in.readLine();
             HashMap<String, Double> prices = new HashMap<String, Double>();
             while (line != null) {
                 String[] data = line.split(" ");
-                String name = data[0];
-                double price = Double.parseDouble(data[1]);
-                prices.put(name, price);
+                prices.put(data[0], Double.parseDouble(data[1]));
                 line = in.readLine();
             }
             Scanner keyboard = new Scanner(System.in);
             line = keyboard.nextLine();
             while (!line.equals("#")) {
-                String[] data = line.split(" ");
-                double total = 0;
-                for(int i = 0; i < data.length; i+=2){
-                    String name = data[i];
-                    double price = 0;
-                    int quantity = Integer.parseInt(data[i+1]);
-                    if (prices.containsKey(name)) {
-                        price = prices.get(name);
-                        total += price * quantity;
-                    } else {
-                        System.out.printf("%s Not available%n", name);
-                    }
-                }
-                System.out.printf("%s", total);
+                String[] data = line.split(" ");                
+                System.out.printf("$%.2f\n", checker(prices, data));
                 line = keyboard.nextLine();
             }
-        } catch (IOException e) {
-            System.out.println("Error processing file: " + e);
+    }
+    public static double checker(HashMap<String, Double> prices, String[] data) {
+        double total = 0;
+        for(int i = 0; i < data.length; i+=2){
+            String name = data[i];
+            double price = 0;
+            int quantity = Integer.parseInt(data[i+1]);
+            if (prices.containsKey(name)) {
+                price = prices.get(name);
+                total += price * quantity;
+            } else {
+                System.out.printf("%s Not available%n", name);
+            }
         }
+        return total;
     }
 }

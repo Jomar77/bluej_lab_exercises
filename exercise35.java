@@ -8,18 +8,13 @@ public class exercise35 {
             String line = in.readLine();
             while (line != null) {
                 String[] data = line.split(" ");
-                phone.put(data[0], data[1] + " " + data[2]);
+                phone.put(data[0],data[1] + " " + data[2]);
                 line = in.readLine();
             }
             Scanner keyboard = new Scanner(System.in);
             line = keyboard.nextLine();
             while (!line.equals("#")) {
-                String name = phone.get(line);
-                if (name == null) {
-                    System.out.println(line + " unknown");
-                } else {
-                    System.out.println(line + " " + name);
-                }
+                System.out.println(!phone.containsKey(line) ? line + " unknown" : line + " "+  phone.get(line));
                 line = keyboard.nextLine();
             }
     }
