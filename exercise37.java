@@ -6,25 +6,31 @@ import java.util.Scanner;
 
 public class exercise37 {
     public static void main(String[] args)  throws IOException{
-            BufferedReader in = new BufferedReader(new FileReader("numberplates.txt"));
-            String line = in.readLine();
-            HashMap<String, String> numberplates = new HashMap<String, String>();
-            while (line != null) {
-                String[] data = line.split(":");
-                String numberplate = data[0];
-                String name = data[1];
-                numberplates.put(numberplate, name);
-                line = in.readLine();
-            }
+            HashMap<String, String> numberplates = readHashMap("numberplates.txt");
             Scanner keyboard = new Scanner(System.in);
-            line = keyboard.nextLine();
-            while (!line.equals("#")) {
-                if (numberplates.containsKey(line)) {
-                    System.out.println(numberplates.get(line));
-                } else {
-                    System.out.println("Unregistered Car");
-                }
-                line = keyboard.nextLine();
+            String line = keyboard.nextLine();
+            while(!line.equals("#")){
+                printHashMap(numberplates);
             }
+    }
+
+    public static void printHashMap(HashMap<String, String> map) {
+        for (String key : map.keySet()) {
+            System.out.println(key + " " + map.get(key));
+        }
+    }
+
+    public static HashMap<String, String> readHashMap(String filename) throws IOException {
+        BufferedReader in = new BufferedReader(new FileReader(filename));
+        String line = in.readLine();
+        HashMap<String, String> map = new HashMap<String, String>();
+        while (line != null) {
+            String[] data = line.split(":");
+            String key = data[0];
+            String value = data[1];
+            map.put(key, value);
+            line = in.readLine();
+        }
+        return map;
     }
 }
