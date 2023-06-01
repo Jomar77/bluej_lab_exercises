@@ -10,13 +10,18 @@ public class exercise37 {
             Scanner keyboard = new Scanner(System.in);
             String line = keyboard.nextLine();
             while(!line.equals("#")){
-                printHashMap(numberplates);
+                printHashMap(numberplates, line);
+                line = keyboard.nextLine();
             }
     }
 
-    public static void printHashMap(HashMap<String, String> map) {
-        for (String key : map.keySet()) {
-            System.out.println(key + " " + map.get(key));
+    public static void printHashMap(HashMap<String, String> map, String key) {
+        Scanner keyboard = new Scanner(key);
+        String plate = keyboard.nextLine();
+        if (map.containsKey(plate)) {
+            System.out.println(map.get(plate));
+        } else {
+            System.out.println("Unregistered Car");
         }
     }
 
