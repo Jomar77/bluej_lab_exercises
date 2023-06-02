@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class exercise38 {
     public static void main(String[] args) throws IOException {
-            HashMap<String, Integer> calories = writeHashMap("calories.txt");
+            HashMap<String, Integer> calories = writeHashMap("diet.txt");
             Scanner kb = new Scanner(System.in);
             String line = kb.nextLine();
             while (!line.equals("#")) {
