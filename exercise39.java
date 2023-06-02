@@ -1,11 +1,10 @@
-
 import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Scanner;
 
 public class exercise39 {
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws IOException {
         HashMap<String, Integer> gems = new HashMap<>();
         File file = new File("gems.txt");
         Scanner input = new Scanner(file);
@@ -34,20 +33,5 @@ public class exercise39 {
             System.out.printf("%d gp", total);
         }
         input.close();
-    }
-
-    String name = "John";
-    String surname = "Doe";
-
-    public int add(int a, int b) {
-        return a + b;
-    }
-
-    public int subtract(int a, int b) {
-        return a - b;
-    }
-
-    public int multiply(int a, int b) {
-        return a * b;
     }
 }
