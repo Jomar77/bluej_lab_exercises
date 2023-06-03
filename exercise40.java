@@ -4,10 +4,8 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Scanner;
 
-
 public class exercise40 {
-    public static void main(String[] args) {
-        try {
+    public static void main(String[] args) throws IOException{
             BufferedReader in = new BufferedReader(new FileReader("melee.txt"));
             String line = in.readLine();
             HashMap<String, Double> weapons = new HashMap<String, Double>();
@@ -42,8 +40,5 @@ public class exercise40 {
                 }
                 line = keyboard.nextLine();
             }
-        } catch (IOException e) {
-            System.out.println("Error: " + e.getMessage());
-        }
     }
 }
