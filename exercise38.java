@@ -14,6 +14,7 @@ public class exercise38 {
                 line = kb.nextLine();
             }
     }
+    
     public static void printOutput(HashMap<String, Integer> map, String key) {  
         String[] data = key.split(",");
         String[] first = data[0].split(":");

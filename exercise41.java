@@ -18,7 +18,7 @@ public class exercise41 {
             process(line, distances, maxDistance);
             line = keyboard.next();
         }
-        
+        keyboard.close();
     }
 
     public static void process (String line, HashMap<String, Integer> distances, int maxDistance){
