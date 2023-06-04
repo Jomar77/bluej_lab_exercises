@@ -8,23 +8,23 @@ public class exercise39 {
     public static void main(String[] args) throws IOException {
         HashMap<String, Integer> gems = readGems("gems.txt");    
         Scanner keyboard = new Scanner(System.in);
-        String input = keyboard.next();
+        String input = keyboard.nextLine();
         while (!input.equals("#")) {
-            process(input, gems);
+            String[] data = input.split(" "); 
+            System.out.println(process(data, gems) + " gp");
             input = keyboard.nextLine();
         }
         keyboard.close();
     }
 
-    public static void process(String line, HashMap<String, Integer> gems) {
-        String[] data = line.split(",");
+    public static Integer process(String [] line, HashMap<String, Integer> gems) {
         int totalValue = 0;
-        for (int i = 0; i < data.length -1; i++) {
-            String name = data[i].split(":")[0];
-            int quantity = Integer.parseInt(data[i].split(":")[1]);
+        for (int i = 0; i < line.length; i+=2) {
+            String name = line[i];
+            int quantity = Integer.parseInt(line[i+1]);
             totalValue += gems.get(name) * quantity;
         }
-        System.out.println(totalValue + " gp");
+        return totalValue;
     }
 
     public static HashMap<String,Integer> readGems(String filename) throws IOException {

@@ -16,7 +16,7 @@ public class exercise27 {
         }
         double average = total / marks.size();
         for (double i : marks) {
-            grader(average,i);
+            grader(average,i);  
         }
     }
 

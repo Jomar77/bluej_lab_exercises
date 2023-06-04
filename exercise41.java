@@ -9,29 +9,33 @@ public class exercise41 {
 
         HashMap<String, Integer> distances = readDistances("travel.txt");
         Scanner keyboard = new Scanner(System.in);
-
+        HashMap<String, Integer> data = new HashMap<String, Integer>();
         String line = keyboard.nextLine();
         int maxDistance = Integer.parseInt(line);
-        line = keyboard.next();
+        line = keyboard.nextLine();
         while (!line.equals("#")) {
-            process(line, distances, maxDistance);
-            distances.clear();
+            int distance = process(line, distances);
+            data.put(line, distance);
+            // compare entry one to entry tw
             line = keyboard.nextLine();
         }
+        int distance1 = data.get(line);
+        int distance2 = data.get(line);
+        System.out.println(distance1 + " " + distance2);
+        //compare entry one to entry two
+
         keyboard.close();
     }
 
-    public static void process(String line, HashMap<String, Integer> distances, int maxDistance) {
-            String[] data = line.split(",");
-            int totalDistance = 0;
-            for (int i = 0; i < data.length; i++) {
-                String from = data[i].split(":")[0];
-                String to = data[i].split(":")[1];
-                totalDistance += distances.get(from + ":" + to);
-            }
-            if (totalDistance <= maxDistance) {
-                System.out.println(line + " " + totalDistance + "km");
-            }
+    public static Integer process(String line, HashMap<String, Integer> distances) {
+        String[] data = line.split(",");
+        int totalDistance = 0;
+        for (int i = 0; i < data.length; i++) {
+            String from = data[i].split(":")[0];
+            String to = data[i].split(":")[1];
+            totalDistance += distances.get(from + ":" + to);
+        }
+        return totalDistance;
     }
 
     public static HashMap<String, Integer> readDistances(String filename) throws IOException {
