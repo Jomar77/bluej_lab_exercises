@@ -11,7 +11,7 @@ public class exercise39 {
         String input = keyboard.next();
         while (!input.equals("#")) {
             process(input, gems);
-            input = keyboard.next();
+            input = keyboard.nextLine();
         }
         keyboard.close();
     }
@@ -19,14 +19,12 @@ public class exercise39 {
     public static void process(String line, HashMap<String, Integer> gems) {
         String[] data = line.split(",");
         int totalValue = 0;
-        int i = 0;
-        while (i < data.length - 1) {
+        for (int i = 0; i < data.length -1; i++) {
             String name = data[i].split(":")[0];
             int quantity = Integer.parseInt(data[i].split(":")[1]);
             totalValue += gems.get(name) * quantity;
-            i++;
         }
-        System.out.println(totalValue + "gp");
+        System.out.println(totalValue + " gp");
     }
 
     public static HashMap<String,Integer> readGems(String filename) throws IOException {
