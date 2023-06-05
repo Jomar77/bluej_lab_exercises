@@ -16,14 +16,14 @@ public class exercise41 {
         while (!line.equals("#")) {
             int distance = process(line, distances);
             data.put(line, distance);
-            // compare entry one to entry tw
             line = keyboard.nextLine();
         }
-        int distance1 = data.get(line);
-        int distance2 = data.get(line);
-        System.out.println(distance1 + " " + distance2);
-        //compare entry one to entry two
-
+        for (String key : data.keySet()) {
+            if (data.get(key) <= maxDistance) {
+                System.out.println(key + " " + data.get(key) + "km");
+            }
+        }
+        
         keyboard.close();
     }
 
