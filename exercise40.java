@@ -5,44 +5,51 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class exercise40 {
-    public static void main(String[] args) throws IOException{
-            HashMap<String, Double> weapons = meleeReader("melee.txt");
-            HashMap<String, Double> input = new HashMap<String, Double>();
-            Scanner keyboard = new Scanner(System.in);
-            String line = keyboard.nextLine();
-            while (!line.equals("#")) {
-                Double attack = attackCompare(line, input);
-                input.put(line, attack);
-                line = keyboard.nextLine();
-            }
-            for (String key : input.keySet()) {
-                process(key, weapons);
-            }
+    public static void main(String[] args) throws IOException {
+        HashMap<String, Double> weapons = meleeReader("melee.txt");
+        HashMap<String, Double> input = new HashMap<String, Double>();
+        Scanner keyboard = new Scanner(System.in);
+        String line = keyboard.nextLine();
+        while (!line.equals("#")) {
+            Double attack = attackCompare(line, weapons);
+            input.put(line, attack);
+            line = keyboard.nextLine();
+        }
+        //print if the hero or ogre wins else neither
+        for (String key : input.keySet()) {
+            System.out.println(attackString(key, weapons));
+        }
+
+        
+        keyboard.close();
     }
+
     public static Double attackCompare(String line, HashMap<String, Double> weapons) {
         String[] data = line.split(" ");
         double totalHero = 0;
         double totalOgre = 0;
-        for (int i = 0; i < data.length; i += 2) {
-            String weapon = data[i];
-            double effectiveness = Double.parseDouble(data[i + 1]);
-            if (i < data.length / 2) {
-                totalHero += weapons.get(weapon) * effectiveness;
-            } else {
-                totalOgre += weapons.get(weapon) * effectiveness;
-            }
-        }
-        return ogre;
+        String weaponHero = data[0];
+        double effectivenessHero = Double.parseDouble(data[1]);
+        String weaponOgre = data[2];
+        double effectivenessOgre = Double.parseDouble(data[3]);
+        totalHero += weapons.get(weaponHero) * effectivenessHero;
+        totalOgre += weapons.get(weaponOgre) * effectivenessOgre;
+        // create a ternary that returns totalhero or totalogre
+        return  totalHero > totalOgre ? totalHero : totalOgre; 
     }
 
-    public static void process(Double totalHero, Double totalOgre) {
-        if (totalHero > totalOgre) {
-            System.out.println("Hero");
-        } else if (totalHero < totalOgre) {
-            System.out.println("Ogre");
-        } else {
-            System.out.println("Neither");
-        }
+    public static String attackString(String line, HashMap<String, Double> weapons) {
+        String[] data = line.split(" ");
+        double totalHero = 0;
+        double totalOgre = 0;
+        String weaponHero = data[0];
+        double effectivenessHero = Double.parseDouble(data[1]);
+        String weaponOgre = data[2];
+        double effectivenessOgre = Double.parseDouble(data[3]);
+        totalHero += weapons.get(weaponHero) * effectivenessHero;
+        totalOgre += weapons.get(weaponOgre) * effectivenessOgre;
+        // create a ternary that returns hero or ogre or neither
+        return totalHero > totalOgre ? "Hero" : totalOgre > totalHero ? "Ogre" : "Neither";
     }
 
     public static HashMap<String, Double> meleeReader(String filename) throws IOException {
