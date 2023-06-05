@@ -14,8 +14,11 @@ public class exercise32 {
         scores[i - 1] = Integer.parseInt(line[i]);
       }
       Arrays.sort(scores);
-      System.out.println(
-          name + " " + scores[scores.length - 1] + " " + scores[scores.length - 2] + " " + scores[scores.length - 3]);
+      System.out.print(name + " " ); 
+      for (int i = 1; i < 4; i++) {
+        System.out.print(scores[scores.length - i ] + " ");
+      }
+      System.out.println();
     }
   }
 }
