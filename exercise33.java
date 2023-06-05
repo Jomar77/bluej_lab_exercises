@@ -1,4 +1,3 @@
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -18,15 +17,14 @@ public class exercise33 {
         }
         reader.close();
         String name = input.nextLine();
-        while(!name.equals("#")){
+        while (!name.equals("#")) {
             namesinput.add(name);
             name = input.nextLine();
         }
         counter(names, namesinput);
-        
     }
 
-    public static void counter(ArrayList<String> names, ArrayList<String> namesinput){
+    public static void counter(ArrayList<String> names, ArrayList<String> namesinput) {
         for (int i = 0; i < namesinput.size(); i++) {
             int count = 0;
             for (int j = 0; j < names.size(); j++) {
