@@ -16,11 +16,10 @@ public class exercise40 {
             line = keyboard.nextLine();
         }
         //print if the hero or ogre wins else neither
+        
         for (String key : input.keySet()) {
             System.out.println(attackString(key, weapons));
         }
-
-        
         keyboard.close();
     }
 
@@ -34,8 +33,8 @@ public class exercise40 {
         double effectivenessOgre = Double.parseDouble(data[3]);
         totalHero += weapons.get(weaponHero) * effectivenessHero;
         totalOgre += weapons.get(weaponOgre) * effectivenessOgre;
-        // create a ternary that returns totalhero or totalogre
-        return  totalHero > totalOgre ? totalHero : totalOgre; 
+        // create a ternary that returns totalhero or totalogre else 0
+        return totalHero > totalOgre ? totalHero : totalOgre > totalHero ? totalOgre : 0;
     }
 
     public static String attackString(String line, HashMap<String, Double> weapons) {
