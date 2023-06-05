@@ -19,18 +19,7 @@ public class exercise40 {
                 process(key, weapons);
             }
     }
-    public static Double attackCompare(String line, HashMap<String, Double> distances) {
-        String[] data = line.split(",");
-        Double compare = 0.0;
-        for (int i = 0; i < data.length; i++) {
-            String from = data[i].split(":")[0];
-            String to = data[i].split(":")[1];
-            compare += distances.get(from + ":" + to);
-        }
-        return compare;
-    }
-
-    public static void process(String line, HashMap<String, Double> weapons) {
+    public static Double attackCompare(String line, HashMap<String, Double> weapons) {
         String[] data = line.split(" ");
         double totalHero = 0;
         double totalOgre = 0;
@@ -43,6 +32,10 @@ public class exercise40 {
                 totalOgre += weapons.get(weapon) * effectiveness;
             }
         }
+        return ogre;
+    }
+
+    public static void process(Double totalHero, Double totalOgre) {
         if (totalHero > totalOgre) {
             System.out.println("Hero");
         } else if (totalHero < totalOgre) {
@@ -50,7 +43,6 @@ public class exercise40 {
         } else {
             System.out.println("Neither");
         }
-
     }
 
     public static HashMap<String, Double> meleeReader(String filename) throws IOException {
