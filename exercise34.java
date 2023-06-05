@@ -8,7 +8,7 @@ public class exercise34 {
     public static void main(String[] args) throws IOException {
 
         HashMap<String, Double> prices = readPrice("prices.txt");
-        String line;y
+        String line;
         Scanner keyboard = new Scanner(System.in);
         line = keyboard.nextLine();
         while (!line.equals("#")) {
