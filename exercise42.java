@@ -1,33 +1,47 @@
-import java.io.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Scanner;
 
 public class exercise42 {
     public static void main(String[] args) throws IOException {
-        HashMap<String, String> morseCode = readMorse("morse.txt");
-        Scanner sc = new Scanner(System.in);
-        String input = sc.nextLine();
+        HashMap<String, String> morse = readMorse("morse.txt");    
+        Scanner keyboard = new Scanner(System.in);
+        String input = keyboard.nextLine();
         while (!input.equals("#")) {
-            Scanner in = new Scanner(input);
-            while (in.hasNext()) {
-                String word = in.next();
-                for (int i = 0; i < word.length(); i++) {
-                    System.out.print(morseCode.get(word.substring(i, i + 1).toUpperCase()));
-                    System.out.print(" ");
-                }
-            }
-            System.out.println();
-            input = sc.nextLine();
+            String[] data = input.split(" "); 
+            System.out.println(process(data, morse).trim());
+            input = keyboard.nextLine();
         }
+        keyboard.close();
     }
 
-    public static HashMap<String, String> readMorse(String filename) throws IOException {
-        HashMap<String, String> morseCode = new HashMap<String, String>();
-        BufferedReader br = new BufferedReader(new FileReader(filename));
-        String line;
-        while ((line = br.readLine()) != null) {
-            String[] parts = line.split(":");
-            morseCode.put(parts[0], parts[1]);
+    public static String process(String [] line, HashMap<String, String> morse) {
+        String output = "";
+        for (int i = 0; i < line.length; i++) {
+            String word = line[i];
+            for (int j = 0; j < word.length(); j++) {
+                String letter = word.substring(j, j+1);
+                output += morse.get(letter.toUpperCase()) + " ";
+            }
+            output += " ";
         }
-        return morseCode;
+        return output;
+    }
+
+    public static HashMap<String,String> readMorse(String filename) throws IOException {
+        BufferedReader in = new BufferedReader(new FileReader(filename));
+        HashMap<String,String> morse = new HashMap<String,String>();
+        String line = in.readLine();
+        while (line != null) {
+            String[] parts = line.split(":");
+            String name = parts[0];
+            String code = parts[1];
+            morse.put(name, code);
+            line = in.readLine();
+        }
+        in.close();
+        return morse;
     }
 }
