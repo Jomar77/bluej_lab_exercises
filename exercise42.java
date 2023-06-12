@@ -7,16 +7,13 @@ public class exercise42 {
         Scanner sc = new Scanner(System.in);
         String input = sc.nextLine();
         while (!input.equals("#")) {
-            String[] words = input.split(" ");
-            for (String word : words) {
+            Scanner in = new Scanner(input);
+            while (in.hasNext()) {
+                String word = in.next();
                 for (int i = 0; i < word.length(); i++) {
-                    if ((i == word.length() - 1)) {
-                        System.out.print(morseCode.get(word.substring(i, i + 1).toUpperCase()).strip());
-                    } else {
-                        System.out.print(morseCode.get(word.substring(i, i + 1).toUpperCase()) + " ");
-                    }
+                    System.out.print(morseCode.get(word.substring(i, i + 1).toUpperCase()));
+                    System.out.print(" ");
                 }
-                System.out.print(" ");
             }
             System.out.println();
             input = sc.nextLine();
