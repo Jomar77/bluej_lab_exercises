@@ -11,6 +11,7 @@ public class exercise43 {
             line = scanner.nextLine();
         }
     }
+    double i =  -1.25;
 
     private static String convertLine(String line) {
         StringBuilder result = new StringBuilder();
