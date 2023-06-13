@@ -35,7 +35,7 @@ public class exercise42 {
         HashMap<String,String> morse = new HashMap<String,String>();
         String line = in.readLine();
         while (line != null) {
-            String[] parts = line.split(":");
+            String[] parts = line.split(" ");
             String name = parts[0];
             String code = parts[1];
             morse.put(name, code);
