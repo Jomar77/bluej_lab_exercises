@@ -1,4 +1,12 @@
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+
 import java.util.Scanner;
+
+import org.junit.Test;
 
 public class exercise8 {
     public static void main(String[] args) {
@@ -15,4 +23,34 @@ public class exercise8 {
             score = input.nextInt();
         }
     }
+
+    //unit testing for merit
+    
+}
+
+class mylibtest{
+    public static String MarktoGrade(int score){
+        if (score <= 49) {
+            return "FAIL";
+        } else if (score <= 79) {
+            return "PASS";
+        } else {
+            return "MERIT";
+        }
+    }
+
+    @Test
+    public void testMarktoGradeFAIL(){
+        assertEquals("FAIL", mylibtest.MarktoGrade(40));
+        assertEquals("FAIL", mylibtest.MarktoGrade(30));
+        assertEquals("FAIL", mylibtest.MarktoGrade(29));
+    }
+
+    @Test
+    public void testMarktoGradeMERIT(){
+        assertEquals("MERIT", mylibtest.MarktoGrade(89));
+        assertEquals("MERIT", mylibtest.MarktoGrade(92));
+        assertEquals("MERIT", mylibtest.MarktoGrade(87));
+    }
+
 }
