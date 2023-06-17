@@ -12,7 +12,7 @@ public class e34
         Scanner kb = new Scanner(System.in);
         HashMap<String, Double> prices = readPrice("pricelist.txt");
         String in = kb.next();
-        double num = kb.nextInt();
+        double num = kb.nextDouble();
         while(!in.equals("#")){
             if(prices.containsKey(in)){
                 System.out.printf("%s %d@$@%.2f $%.2f/n",in,num,prices.get(in), num*prices.get(in));
@@ -20,7 +20,7 @@ public class e34
                 System.out.printf("%s Not available/n",in);
             }
             in = kb.next();
-            num = kb.nextInt();        
+            num = kb.nextDouble();        
         }
 
     }
