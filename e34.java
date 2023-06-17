@@ -4,7 +4,7 @@ import java.io.*;
  * Write a description of class prac here.
  *
  * @Jomar
- * @ersion (a version number or a date)
+ * @version (a version number or a date)
  */
 public class e34
 {

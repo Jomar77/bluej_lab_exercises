@@ -7,7 +7,8 @@ import java.util.Scanner;
 public class exercise34 {
     public static void main(String[] args) throws IOException {
 
-        HashMap<String, Double> prices = readPrice("prices.txt");
+        HashMap<String, Double> prices = readPrice("pricelist.txt");
+
         String line;
         Scanner keyboard = new Scanner(System.in);
         line = keyboard.nextLine();
@@ -25,7 +26,7 @@ public class exercise34 {
         }
     }
 
-    public static HashMap readPrice(String filename) throws IOException {
+    public static HashMap<String,Double> readPrice(String filename) throws IOException {
         BufferedReader in = new BufferedReader(new FileReader(filename));
         String line = in.readLine();
         HashMap<String, Double> prices = new HashMap<String, Double>();
