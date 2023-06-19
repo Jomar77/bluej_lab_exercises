@@ -12,15 +12,15 @@ public class e34
         Scanner kb = new Scanner(System.in);
         HashMap<String, Double> prices = readPrice("pricelist.txt");
         String in = kb.next();
-        double num = kb.nextDouble();
+        int num = kb.nextInt();
         while(!in.equals("#")){
             if(prices.containsKey(in)){
-                System.out.printf("%s %d@$@%.2f $%.2f/n",in,num,prices.get(in), num*prices.get(in));
+                System.out.printf("%s %d@$%.2f $%.2f\n",in,num,prices.get(in), num*prices.get(in));
             }else{
-                System.out.printf("%s Not available/n",in);
+                System.out.printf("%s Not available\n",in);
             }
             in = kb.next();
-            num = kb.nextDouble();        
+            num = kb.nextInt();        
         }
 
     }
@@ -34,7 +34,8 @@ public class e34
             String [] data = line.split(" ");
             String name = data[0];
             Double price = Double.parseDouble(data[1]);
-            pricelist.put(name,price);            
+            pricelist.put(name,price);  
+            line = br.readLine();          
         }
 
         return pricelist;
