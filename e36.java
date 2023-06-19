@@ -6,13 +6,15 @@ import java.io.*;
  * @Jomar
  * @version (a version number or a date)
  */
-public class e34
+public class e36
 {
     public static void main (String args[]) throws IOException{
         Scanner kb = new Scanner(System.in);
         HashMap<String, Double> prices = readPrice("pricelist.txt");
         String in = kb.next();
         int num = kb.nextInt();
+        String in2 = kb.next();
+        int num2 = kb.nextInt();
         
         while(!in.equals("#")){
             if(prices.containsKey(in)){
@@ -22,6 +24,8 @@ public class e34
             }
             in = kb.next();
             num = kb.nextInt();        
+            in2 = kb.next();
+            num2 = kb.nextInt();        
         }
 
     }
