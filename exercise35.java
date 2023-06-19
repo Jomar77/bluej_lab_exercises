@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class exercise35 {
     public static void main(String[] args) throws IOException {
-            HashMap<String, String> phone = readPhone("phone.txt");
+            HashMap<String, String> phone = readPhone("phonelist.txt");
             String line;
             Scanner keyboard = new Scanner(System.in);
             line = keyboard.nextLine();
