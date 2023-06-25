@@ -1,6 +1,7 @@
 import java.util.Scanner;
 import java.util.HashMap;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -17,17 +18,14 @@ public class exercise35 {
             keyboard.close();
     }
 
-    public static HashMap<String,String> readPhone(String filename) throws IOException {
-        BufferedReader in = new BufferedReader(new FileReader(filename));
-        String line = in.readLine();
-        HashMap<String, String> phone = new HashMap<String, String>();
-        while (line != null) {
-            String[] data = line.split(" ");
-            String name = data[0];
-            String number = data[1];
-            phone.put(name, number);
-            line = in.readLine();
+    HashMap <String,Double> price = new HashMap<String,Double>();
+        Scanner sc = new Scanner(new File(filename));
+        while(sc.hasNextLine()){
+            String name = sc.next();
+            double number = sc.nextDouble(); 
+            price.put(name, number);
+            
+            return price;
         }
-        return phone;
     }
 }

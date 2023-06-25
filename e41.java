@@ -34,12 +34,13 @@ Invercargill:Gore,Gore:Winton,Winton:Invercargill 161km
  */
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
 public class e41 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         // Read the maximum distance from standard input
         Scanner scanner = new Scanner(System.in);
         int maxDistance = Integer.parseInt(scanner.nextLine());
@@ -78,9 +79,9 @@ public class e41 {
         scanner.close();
     }
 
-    private static Map<String, Integer> readTravelDistancesFromFile(String filename) {
+    private static Map<String, Integer> readTravelDistancesFromFile(String filename) throws IOException {
         Map<String, Integer> travelDistances = new HashMap<>();
-        try {
+        
             File file = new File(filename);
             Scanner scanner = new Scanner(file);
 
@@ -94,10 +95,6 @@ public class e41 {
 
                 travelDistances.put(from + ":" + to, distance);
             }
-            scanner.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            return travelDistances;
         }
-        return travelDistances;
     }
-}
