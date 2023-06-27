@@ -1,31 +1,33 @@
-import java.util.Scanner;
-import java.util.HashMap;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-
+import java.io.*;
+import java.util.*;
 public class exercise35 {
-    public static void main(String[] args) throws IOException {
-            HashMap<String, String> phone = readPhone("phonelist.txt");
-            String line;
-            Scanner keyboard = new Scanner(System.in);
-            line = keyboard.nextLine();
-            while (!line.equals("#")) {
-                System.out.println(!phone.containsKey(line) ? line + " unknown" : line + " "+  phone.get(line));
-                line = keyboard.nextLine();
-            }
-            keyboard.close();
-    }
+	public static void main(String[] args) throws IOException {
+		HashMap<String, String> phoneList = phoneList("phonelist.txt");
+		Scanner input = new Scanner(System.in);
+		String phone = input.nextLine();
+		while(!phone.equals("#")) {
+			if(phoneList.containsKey(phone)) {
+				System.out.println(phone + phoneList.get(phone));
+			}
+			else {
+				System.out.println(phone + " unknown");
+			}
+			phone = input.nextLine();
+		}
+		input.close();
+	}
 
-    HashMap <String,Double> price = new HashMap<String,Double>();
-        Scanner sc = new Scanner(new File(filename));
-        while(sc.hasNextLine()){
-            String name = sc.next();
-            double number = sc.nextDouble(); 
-            price.put(name, number);
-            
-            return price;
-        }
+
+    public static HashMap<String, String> phoneList (String filename) throws IOException{
+        HashMap<String, String> phoneList = new HashMap<String, String>();
+		Scanner input = new Scanner(new File(filename));
+		while(input.hasNext()) {
+			phoneList.put(input.next(), input.nextLine());
+		}
+		return phoneList;
     }
 }
+
+
+
+
