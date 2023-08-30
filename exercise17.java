@@ -15,7 +15,7 @@
          String input = s.nextLine();
          
          while(!input.equals("#")){
-             System.out.printf("%.2f", sampleMethod(input));
+             System.out.printf("%.2f\n", sampleMethod(input));
              input = s.nextLine();
          }
          
@@ -27,16 +27,22 @@
          double area = 0;
          scn.useDelimiter(" ");
          String letter = scn.next();
-        
-
+         double num = scn.nextDouble();
+         
+         
          if(letter.equals("C")){
-             area = 3.14 * scn.nextDouble();
-         }
-         else if(letter.equals("S") || letter.equals("R")){
-             area = scn.nextDouble() * scn.nextDouble();
-         }
-         else if(letter.equals("T")){
-             area = (scn.nextDouble() * scn.nextDouble()) /2;
+             area = 3.14 * num *num;
+            }
+            else if(letter.equals("S")) {
+                area = num * num ;
+            }
+            else if (letter.equals("R")){
+             double num2 = scn.nextDouble();
+             area = num * num2;
+            }
+            else if(letter.equals("T")){
+             double num2 = scn.nextDouble();
+             area = (num * num2) /2;
          }
          return area;
      }
