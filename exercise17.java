@@ -15,19 +15,19 @@
          String input = s.nextLine();
          
          while(!input.equals("#")){
-             sampleMethod(input);
+             System.out.printf("%.2f", sampleMethod(input));
              input = s.nextLine();
          }
          
      }
      
-     public static void sampleMethod(String in)
+     public static double sampleMethod(String in)
      {
          Scanner scn = new Scanner(in);
          double area = 0;
-         scn.useDelimiter("\s");
-         String letter = scn.nextLine();
-         
+         scn.useDelimiter(" ");
+         String letter = scn.next();
+        
 
          if(letter.equals("C")){
              area = 3.14 * scn.nextDouble();
@@ -38,7 +38,7 @@
          else if(letter.equals("T")){
              area = (scn.nextDouble() * scn.nextDouble()) /2;
          }
-         System.out.println(area);
+         return area;
      }
  }
  
